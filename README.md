@@ -1,3 +1,3 @@
-# sms.forward
+# sms➔
 Forwards SMS messages via SMS or SMTP
 
