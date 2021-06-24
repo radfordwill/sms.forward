@@ -1,0 +1,60 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "3:3722059490250384012",
+      "lastPropertyId": "4:8551478484772288264",
+      "name": "SmsConfig",
+      "properties": [
+        {
+          "id": "1:1059208134870034782",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:4746445206293732045",
+          "name": "name",
+          "type": 9
+        },
+        {
+          "id": "3:1674800901088407749",
+          "name": "forwardNumber",
+          "type": 9
+        },
+        {
+          "id": "4:8551478484772288264",
+          "name": "includeSenderNumber",
+          "type": 1,
+          "flags": 4
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "4:4948442247090467558",
+  "lastIndexId": "0:0",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 5,
+  "modelVersionParserMinimum": 5,
+  "retiredEntityUids": [
+    8868406621800114812,
+    6933953245294901828,
+    4948442247090467558
+  ],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [
+    5046390260746322479,
+    1929564876505970230,
+    2525180106030089748,
+    7549243117897707864,
+    2115605160832760186,
+    712925257930984115,
+    2981180761721279813
+  ],
+  "retiredRelationUids": [],
+  "version": 1
+}

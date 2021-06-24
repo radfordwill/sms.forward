@@ -1,0 +1,26 @@
+<resources>
+    <string name="appName">sms➔</string>
+    <string name="actionSettings">Settings</string>
+
+    <string name="configurations">Configurations</string>
+    <string name="delete">Delete</string>
+
+    <string name="addSmsConfig">Add SMS config</string>
+    <string name="addSmtpConfig">Add SMTP config</string>
+
+    <string name="smsConfigName">SMS Config Name</string>
+    <string name="forwardNumber">Forwarding number</string>
+    <string name="includeSenderNumber">Include sender number:</string>
+
+    <string name="addFilter">Add filter</string>
+    <string name="filters">Filters (allowing):</string>
+    <string name="filtersBlocking">Filters (blocking):</string>
+    <string name="filtersForwardingAll">Filters: none (forwarding all messages)</string>
+    <string name="filterNumber">Filter number</string>
+
+    <string name="smtpConfigName">SMTP Config Name</string>
+
+    <string name="phoneNumberHint">555–555–5555</string>
+    <string name="phoneNumberError">That isn\'t a valid phone number.</string>
+
+</resources>

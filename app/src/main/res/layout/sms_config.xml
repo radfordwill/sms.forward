@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<eski.sms.ui.SmsConfigView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/grid2Size"
+    tools:background="@color/background">
+
+    <LinearLayout
+        android:id="@+id/smsConfigContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/surfaceColor"
+        android:clipToPadding="false"
+        android:orientation="vertical"
+        android:padding="@dimen/gridSize">
+
+        <EditText
+            android:id="@+id/smsConfigName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/gridSize"
+            android:hint="@string/smsConfigName"
+            android:maxLines="1"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:backgroundTint="#00ffffff" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/gridHalfSize"
+            android:layout_marginLeft="@dimen/gridHalfSize"
+            android:hint="@string/forwardNumber"
+            android:textColorHint="@color/gray"
+            app:expandedHintEnabled="false"
+            app:hintAnimationEnabled="false"
+            app:hintEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/smsConfigForwardNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/phoneNumberHint"
+                android:inputType="phone"
+                app:backgroundTint="#00ffffff" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/gridSize"
+            android:layout_marginLeft="@dimen/gridSize"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/includeSenderNumber"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/smsConfigIncludeSenderNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:buttonTint="@color/white" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/oneDpOrPx"
+            android:layout_marginLeft="@dimen/negGridSize"
+            android:layout_marginRight="@dimen/negGridSize"
+            android:layout_marginBottom="@dimen/gridSize"
+            android:background="@color/gray" />
+
+        <include layout="@layout/filters" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/smsConfigAddNumberFilter"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="@string/addFilter" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/smsConfigDeleteButton"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="@string/delete"
+                android:textColor="@color/black"
+                app:backgroundTint="@color/red" />
+
+        </LinearLayout>
+    </LinearLayout>
+</eski.sms.ui.SmsConfigView>

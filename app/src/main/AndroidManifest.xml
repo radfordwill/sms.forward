@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      package="eski.sms">
+
+   <uses-permission android:name="android.permission.INTERNET" />
+   <uses-permission android:name="android.permission.RECEIVE_SMS" />
+   <uses-permission android:name="android.permission.SEND_SMS" />
+
+   <application
+         android:name=".App"
+         android:allowBackup="false"
+         android:icon="@mipmap/ic_launcher"
+         android:label="@string/appName"
+         android:roundIcon="@mipmap/ic_launcher_round"
+         android:supportsRtl="true"
+         android:theme="@style/AppTheme"
+         tools:ignore="GoogleAppIndexingWarning">
+
+      <activity
+            android:name=".MainActivity"
+            android:label="@string/appName"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustNothing">
+         <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+         </intent-filter>
+      </activity>
+
+      <receiver android:name=".routing.SmsReceiver">
+         <intent-filter android:priority="2147483647">
+            <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+         </intent-filter>
+      </receiver>
+
+   </application>
+</manifest>
