@@ -26,4 +26,6 @@
    <string name="phoneNumberHint">555–555–5555</string>
    <string name="phoneNumberError">That isn\'t a valid phone number.</string>
 
+   <string name="sentFrom">Sent from: %s</string>
+
 </resources>
