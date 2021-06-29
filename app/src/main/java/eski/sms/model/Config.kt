@@ -43,6 +43,17 @@ abstract class Config(
          }
       }
 
+      updateNumberFiltersJson()
+   }
+
+   fun removeNumberFilter(index: Int) {
+      if (numberFilters.size <= index) return
+
+      numberFilters = numberFilters.toMutableList().apply { removeAt(index) }
+      updateNumberFiltersJson()
+   }
+
+   private fun updateNumberFiltersJson() {
       numberFiltersJson = JSONArray(numberFilters).toString()
    }
 

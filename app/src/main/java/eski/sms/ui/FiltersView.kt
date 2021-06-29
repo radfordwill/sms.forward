@@ -4,7 +4,9 @@ import android.view.View
 import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.widget.addTextChangedListener
+import com.google.android.material.textfield.TextInputLayout
 import eski.sms.App
 import eski.sms.R
 import eski.sms.model.Config
@@ -29,8 +31,6 @@ class FiltersView(
    }
 
    private fun addFilterView(number: String) {
-      val index = filtersContainer.childCount
-
       val filterView = View.inflate(App.themedInstance, R.layout.filter, null)
       filtersContainer.addView(filterView)
 
@@ -38,7 +38,20 @@ class FiltersView(
          setText(number)
 
          addTextChangedListener {
-            config.updateNumberFilter(index, this.text.toString())
+            config.updateNumberFilter(filtersContainer.indexOfChild(filterView), this.text.toString())
+            setFiltersHeaderText()
+            Repository.updateConfig(config)
+         }
+      }
+
+      filterView.findViewById<TextInputLayout>(R.id.filterLayout).apply {
+         endIconDrawable = AppCompatResources.getDrawable(context, R.drawable.cancel)
+         setEndIconActivated(true)
+
+         setEndIconOnClickListener {
+            config.removeNumberFilter(filtersContainer.indexOfChild(filterView))
+            filtersContainer.removeView(filterView)
+            setFiltersHeaderText()
             Repository.updateConfig(config)
          }
       }
