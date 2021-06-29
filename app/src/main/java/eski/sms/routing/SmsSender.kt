@@ -12,27 +12,30 @@ class SmsSender {
    private val manager: SmsManager = SmsManager.getDefault()
 
    fun forwardMessage(message: SmsMessage) {
-      Repository.smsConfigs.filter { it.validate() }.forEach configLoop@{ config ->
-         when {
-            config.numberFilters.isEmpty() -> {
-               forwardMessage(message, config)
-            }
-            config.blockNumberFilters -> {
-               config.numberFilters.forEach {
-                  if (PhoneNumberUtils.compare(it, message.originatingAddress)) {
-                     return@configLoop
+      Repository.smsConfigs
+         .filter { it.enabled }
+         .filter { it.validate() }
+         .forEach configLoop@{ config ->
+            when {
+               config.numberFilters.isEmpty() -> {
+                  forwardMessage(message, config)
+               }
+               config.blockNumberFilters -> {
+                  config.numberFilters.forEach {
+                     if (PhoneNumberUtils.compare(it, message.originatingAddress)) {
+                        return@configLoop
+                     }
+                  }
+               }
+               else -> {
+                  config.numberFilters.forEach {
+                     if (PhoneNumberUtils.compare(it, message.originatingAddress)) {
+                        forwardMessage(message, config)
+                        return@configLoop
+                     }
                   }
                }
             }
-            else -> {
-               config.numberFilters.forEach {
-                  if (PhoneNumberUtils.compare(it, message.originatingAddress)) {
-                     forwardMessage(message, config)
-                     return@configLoop
-                  }
-               }
-            }
-         }
       }
    }
 

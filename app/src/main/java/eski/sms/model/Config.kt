@@ -12,7 +12,8 @@ abstract class Config(
    @Id var id: Long = 0,
    var name: String = "",
    var numberFiltersJson: String = "[]",
-   var blockNumberFilters: Boolean = false
+   var blockNumberFilters: Boolean = false,
+   var enabled: Boolean = true
 ) {
    @delegate:Transient
    var numberFilters: List<String> by LazyMutable { parseNumberFilters() }

@@ -5,7 +5,7 @@
   "entities": [
     {
       "id": "3:3722059490250384012",
-      "lastPropertyId": "4:8551478484772288264",
+      "lastPropertyId": "6:7648529530929625839",
       "name": "SmsConfig",
       "properties": [
         {
@@ -27,6 +27,17 @@
         {
           "id": "4:8551478484772288264",
           "name": "includeSenderNumber",
+          "type": 1,
+          "flags": 4
+        },
+        {
+          "id": "5:825398054387798940",
+          "name": "numberFiltersJson",
+          "type": 9
+        },
+        {
+          "id": "6:7648529530929625839",
+          "name": "blockNumberFilters",
           "type": 1,
           "flags": 4
         }

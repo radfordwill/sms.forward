@@ -9,6 +9,7 @@ import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.FrameLayout
 import androidx.core.widget.addTextChangedListener
+import com.google.android.material.switchmaterial.SwitchMaterial
 import eski.sms.App
 import eski.sms.R
 import eski.sms.model.Repository
@@ -39,6 +40,7 @@ class SmsConfigView @JvmOverloads constructor(
       this.filtersView = FiltersView(config, this, findViewById(R.id.smsConfigAddNumberFilter))
 
       setupNameField()
+      setupEnabledSwitch()
       setupForwardNumberField()
       setupIncludeSenderNumberField()
       setupDeleteButton()
@@ -50,6 +52,17 @@ class SmsConfigView @JvmOverloads constructor(
 
          addTextChangedListener {
             config.name = it.toString()
+            Repository.updateConfig(config)
+         }
+      }
+   }
+
+   private fun setupEnabledSwitch() {
+      findViewById<SwitchMaterial>(R.id.smsConfigEnabledSwitch).apply {
+         isChecked = config.enabled
+
+         setOnCheckedChangeListener { buttonView, isChecked ->
+            config.enabled = isChecked
             Repository.updateConfig(config)
          }
       }

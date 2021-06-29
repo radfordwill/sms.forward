@@ -5,7 +5,7 @@
   "entities": [
     {
       "id": "3:3722059490250384012",
-      "lastPropertyId": "6:7648529530929625839",
+      "lastPropertyId": "7:7805836449028165447",
       "name": "SmsConfig",
       "properties": [
         {
@@ -38,6 +38,12 @@
         {
           "id": "6:7648529530929625839",
           "name": "blockNumberFilters",
+          "type": 1,
+          "flags": 4
+        },
+        {
+          "id": "7:7805836449028165447",
+          "name": "enabled",
           "type": 1,
           "flags": 4
         }
