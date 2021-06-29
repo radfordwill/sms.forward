@@ -52,6 +52,7 @@ class SmsSender {
       val builder = StringBuilder()
 
       if (config.includeSenderNumber) builder.append("${message.originatingAddress}:\n")
+      if (config.includeSubjectLine) builder.append("${config.subjectLine}\n")
       builder.append(message.messageBody)
 
       return builder.toString()

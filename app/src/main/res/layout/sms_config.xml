@@ -64,6 +64,26 @@
 
       </com.google.android.material.textfield.TextInputLayout>
 
+      <com.google.android.material.textfield.TextInputLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginStart="@dimen/gridHalfSize"
+         android:layout_marginLeft="@dimen/gridHalfSize"
+         android:hint="@string/subjectLine"
+         android:textColorHint="@color/gray"
+         app:expandedHintEnabled="false"
+         app:hintAnimationEnabled="false"
+         app:hintEnabled="true">
+
+         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/smsConfigSubjectLine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/subjectLineHint"
+            app:backgroundTint="#00ffffff" />
+
+      </com.google.android.material.textfield.TextInputLayout>
+
       <LinearLayout
          android:layout_width="match_parent"
          android:layout_height="wrap_content"
@@ -80,6 +100,27 @@
 
          <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/smsConfigIncludeSenderNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:buttonTint="@color/white" />
+      </LinearLayout>
+
+      <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginStart="@dimen/gridSize"
+         android:layout_marginLeft="@dimen/gridSize"
+         android:orientation="horizontal">
+
+         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/includeSubjectLine"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+         <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/smsConfigIncludeSubjectLine"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:buttonTint="@color/white" />

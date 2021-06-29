@@ -11,6 +11,10 @@
     <string name="smsConfigName">SMS Config Name</string>
     <string name="forwardNumber">Forwarding number</string>
     <string name="includeSenderNumber">Include sender number:</string>
+    <string name="includeSubjectLine">Include subject line:</string>
+    <string name="subjectLine">Subject line</string>
+    <string name="subjectLineHint">Enter subject line (optional)</string>
+
 
     <string name="addFilter">Add filter</string>
     <string name="filters">Filters (allowing):</string>

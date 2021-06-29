@@ -43,6 +43,8 @@ class SmsConfigView @JvmOverloads constructor(
       setupEnabledSwitch()
       setupForwardNumberField()
       setupIncludeSenderNumberField()
+      setupIncludeSubjectLineField()
+      setupSubjectLineField()
       setupDeleteButton()
    }
 
@@ -85,6 +87,28 @@ class SmsConfigView @JvmOverloads constructor(
 
          setOnCheckedChangeListener { buttonView, isChecked ->
             config.includeSenderNumber = isChecked
+            Repository.updateConfig(config)
+         }
+      }
+   }
+
+   private fun setupIncludeSubjectLineField() {
+      findViewById<CheckBox>(R.id.smsConfigIncludeSubjectLine).apply {
+         isChecked = config.includeSubjectLine
+
+         setOnCheckedChangeListener { buttonView, isChecked ->
+            config.includeSubjectLine = isChecked
+            Repository.updateConfig(config)
+         }
+      }
+   }
+
+   private fun setupSubjectLineField() {
+      findViewById<EditText>(R.id.smsConfigSubjectLine).apply {
+         setText(config.subjectLine)
+
+         addTextChangedListener {
+            config.subjectLine = it.toString()
             Repository.updateConfig(config)
          }
       }

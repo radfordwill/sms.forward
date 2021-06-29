@@ -5,7 +5,7 @@
   "entities": [
     {
       "id": "3:3722059490250384012",
-      "lastPropertyId": "7:7805836449028165447",
+      "lastPropertyId": "9:3463299633579913241",
       "name": "SmsConfig",
       "properties": [
         {
@@ -46,6 +46,17 @@
           "name": "enabled",
           "type": 1,
           "flags": 4
+        },
+        {
+          "id": "8:2613334939560963585",
+          "name": "includeSubjectLine",
+          "type": 1,
+          "flags": 4
+        },
+        {
+          "id": "9:3463299633579913241",
+          "name": "subjectLine",
+          "type": 9
         }
       ],
       "relations": []
