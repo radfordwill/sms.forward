@@ -31,17 +31,16 @@ abstract class Config(
       }
    }
 
-   fun updateNumberFilter(index: Int, number: String?) {
-      numberFilters = if (numberFilters.size == index && number != null) {
-         numberFilters.toMutableList().apply { add(number) }
-      } else {
-         numberFilters.mapIndexedNotNull { oldIndex, s ->
-            if (oldIndex == index) {
-               number
-            } else {
-               s
-            }
-         }
+   fun addNumberFilter(number: String = "") {
+      numberFilters = numberFilters.toMutableList().apply { add(number) }
+      updateNumberFiltersJson()
+   }
+
+   fun updateNumberFilter(index: Int, newNumber: String) {
+      if (numberFilters.size <= index) return
+
+      numberFilters = numberFilters.mapIndexed { oldIndex, oldNumber ->
+         if (oldIndex == index) newNumber  else oldNumber
       }
 
       updateNumberFiltersJson()
