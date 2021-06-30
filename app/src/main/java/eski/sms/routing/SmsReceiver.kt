@@ -6,6 +6,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.telephony.SmsMessage
+import eski.sms.model.Repository
 import eski.sms.utils.log
 
 
@@ -29,7 +30,10 @@ class SmsReceiver: BroadcastReceiver() {
       }
 
       messages.forEach { message ->
-         log("received message from ${message.originatingAddress}: ${message.messageBody}")
+         log(
+            "received message from ${message.originatingAddress}" +
+                  ": ${if (Repository.settings.showMessageInLogs) message.messageBody else ""}"
+         )
          smsSender.forwardMessage(message)
       }
    }

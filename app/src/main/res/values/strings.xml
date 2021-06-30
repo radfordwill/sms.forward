@@ -1,9 +1,12 @@
 <resources>
    <string name="appName">sms➔</string>
    <string name="actionSettings">Settings</string>
+   <string name="actionLogs">Logs</string>
+   <string name="actionDeleteLogs">Delete logs</string>
 
    <string name="configurations">Configurations</string>
    <string name="delete">Delete</string>
+   <string name="refresh">Refresh</string>
 
    <string name="addSmsConfig">Add SMS config</string>
    <string name="addSmtpConfig">Add SMTP config</string>
@@ -27,5 +30,12 @@
    <string name="phoneNumberError">That isn\'t a valid phone number.</string>
 
    <string name="sentFrom">Sent from: %s</string>
+
+   <string name="settingsScreenName">sms➔settings</string>
+   <string name="logsScreenName">sms➔logs</string>
+
+   <string name="logsEnabled">Logs enabled</string>
+   <string name="logcatEnabled">Logcat enabled</string>
+   <string name="showMessageInLogs">Show message in logs</string>
 
 </resources>

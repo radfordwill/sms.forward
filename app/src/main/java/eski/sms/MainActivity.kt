@@ -2,6 +2,7 @@ package eski.sms
 
 import android.Manifest.permission.RECEIVE_SMS
 import android.Manifest.permission.SEND_SMS
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.Menu
@@ -9,6 +10,9 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import eski.sms.ui.ConfigsView
+import eski.sms.model.Repository
+import eski.sms.ui.SettingsActivity
+import eski.sms.ui.logs.LogsActivity
 import eski.sms.utils.log
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -23,13 +27,19 @@ class MainActivity: AppCompatActivity() {
    }
 
    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-      menuInflater.inflate(R.menu.menu_main, menu)
+      menuInflater.inflate(R.menu.menu, menu)
       return true
    }
 
    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-      return when (item.itemId) {
-         R.id.action_settings -> true
+      when (item.itemId) {
+         R.id.actionSettings -> startActivity(Intent(this, SettingsActivity::class.java))
+         R.id.actionLogs -> startActivity(Intent(this, LogsActivity::class.java))
+         R.id.actionDeleteLogs -> Repository.clearLogs()
+      }
+
+      return when(item.itemId) {
+         R.id.actionSettings, R.id.actionLogs, R.id.actionDeleteLogs -> true
          else -> super.onOptionsItemSelected(item)
       }
    }

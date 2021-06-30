@@ -38,13 +38,13 @@ class SmsSender {
                   }
                }
             }
-      }
+         }
    }
 
    private fun forwardMessage(message: SmsMessage, config: SmsConfig) {
       log(
-         "attempting to send the following message from ${message.originatingAddress} to ${config.forwardNumber}: " +
-               formatMessage(message, config)
+         "attempting to a message from ${message.originatingAddress} to ${config.forwardNumber}" +
+               if (Repository.settings.showMessageInLogs) ": ${formatMessage(message, config)}" else ""
       )
 
       manager.sendTextMessage(config.forwardNumber, null, formatMessage(message, config), null, null)

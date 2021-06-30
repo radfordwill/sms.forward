@@ -1,0 +1,23 @@
+<menu
+   xmlns:android="http://schemas.android.com/apk/res/android"
+   xmlns:app="http://schemas.android.com/apk/res-auto"
+   xmlns:tools="http://schemas.android.com/tools"
+   tools:context="eski.sms.MainActivity">
+   <item
+      android:id="@+id/actionSettings"
+      android:orderInCategory="1"
+      android:title="@string/actionSettings"
+      app:showAsAction="never" />
+
+   <item
+      android:id="@+id/actionLogs"
+      android:orderInCategory="2"
+      android:title="@string/actionLogs"
+      app:showAsAction="never" />
+
+   <item
+      android:id="@+id/actionDeleteLogs"
+      android:orderInCategory="3"
+      android:title="@string/actionDeleteLogs"
+      app:showAsAction="never" />
+</menu>

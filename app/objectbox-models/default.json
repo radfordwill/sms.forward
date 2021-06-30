@@ -60,9 +60,71 @@
         }
       ],
       "relations": []
+    },
+    {
+      "id": "5:5748885088679109079",
+      "lastPropertyId": "5:6095382011992530472",
+      "name": "Settings",
+      "properties": [
+        {
+          "id": "1:3693844568442548212",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:8453577189207007322",
+          "name": "logcatEnabled",
+          "type": 1,
+          "flags": 4
+        },
+        {
+          "id": "3:1667700433569214788",
+          "name": "logsEnabled",
+          "type": 1,
+          "flags": 4
+        },
+        {
+          "id": "5:6095382011992530472",
+          "name": "showMessageInLogs",
+          "type": 1,
+          "flags": 4
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "7:3774795052221533934",
+      "lastPropertyId": "4:4861805129576519813",
+      "name": "SmsLog",
+      "properties": [
+        {
+          "id": "1:5808787233338800544",
+          "name": "formattedTimestamp",
+          "type": 9
+        },
+        {
+          "id": "2:3033361435929902152",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "3:1569026039478901097",
+          "name": "message",
+          "type": 9
+        },
+        {
+          "id": "4:4861805129576519813",
+          "name": "timeStamp",
+          "type": 6,
+          "flags": 4
+        }
+      ],
+      "relations": []
     }
   ],
-  "lastEntityId": "4:4948442247090467558",
+  "lastEntityId": "7:3774795052221533934",
   "lastIndexId": "0:0",
   "lastRelationId": "0:0",
   "lastSequenceId": "0:0",
@@ -71,7 +133,8 @@
   "retiredEntityUids": [
     8868406621800114812,
     6933953245294901828,
-    4948442247090467558
+    4948442247090467558,
+    264098318352449394
   ],
   "retiredIndexUids": [],
   "retiredPropertyUids": [
@@ -81,7 +144,9 @@
     7549243117897707864,
     2115605160832760186,
     712925257930984115,
-    2981180761721279813
+    2981180761721279813,
+    8592962797831840237,
+    1945536720780024872
   ],
   "retiredRelationUids": [],
   "version": 1
