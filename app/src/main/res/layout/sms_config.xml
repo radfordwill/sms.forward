@@ -94,12 +94,12 @@
          <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/includeSenderNumber"
+            android:text="@string/includeSubjectLine"
             android:textColor="@color/white"
             android:textSize="18sp" />
 
          <androidx.appcompat.widget.AppCompatCheckBox
-            android:id="@+id/smsConfigIncludeSenderNumber"
+            android:id="@+id/smsConfigIncludeSubjectLine"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:buttonTint="@color/white" />
@@ -115,12 +115,12 @@
          <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/includeSubjectLine"
+            android:text="@string/includeSenderNumber"
             android:textColor="@color/white"
             android:textSize="18sp" />
 
          <androidx.appcompat.widget.AppCompatCheckBox
-            android:id="@+id/smsConfigIncludeSubjectLine"
+            android:id="@+id/smsConfigIncludeSenderNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:buttonTint="@color/white" />

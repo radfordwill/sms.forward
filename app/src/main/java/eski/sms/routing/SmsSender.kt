@@ -43,7 +43,7 @@ class SmsSender {
 
    private fun forwardMessage(message: SmsMessage, config: SmsConfig) {
       log(
-         "attempting to a message from ${message.originatingAddress} to ${config.forwardNumber}" +
+         "attempting to forward a message from ${message.originatingAddress} to ${config.forwardNumber}" +
                if (Repository.settings.showMessageInLogs) ": ${formatMessage(message, config)}" else ""
       )
 
@@ -53,8 +53,8 @@ class SmsSender {
    private fun formatMessage(message: SmsMessage, config: SmsConfig): String {
       val builder = StringBuilder()
 
-      if (config.includeSenderNumber) builder.append(App.instance.getString(R.string.sentFrom, message.originatingAddress))
       if (config.includeSubjectLine) builder.append("${config.subjectLine}\n")
+      if (config.includeSenderNumber) builder.append(App.instance.getString(R.string.sentFrom, message.originatingAddress)+"\n")
       builder.append(message.messageBody)
 
       return builder.toString()

@@ -21,7 +21,7 @@
    <string name="addFilter">Add filter</string>
    <string name="filters">Filters (allowing):</string>
    <string name="filtersBlocking">Filters (blocking):</string>
-   <string name="filtersForwardingAll">Filters: none (forwarding all messages)</string>
+   <string name="filtersForwardingAll">Filters: none (forwarding all)</string>
    <string name="filterNumber">Filter number</string>
 
    <string name="smtpConfigName">SMTP Config Name</string>
