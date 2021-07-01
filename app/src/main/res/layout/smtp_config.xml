@@ -78,6 +78,7 @@
       android:layout_marginLeft="@dimen/gridHalfSize"
       android:hint="@string/password"
       android:textColorHint="@color/gray"
+      app:endIconMode="password_toggle"
       app:expandedHintEnabled="false"
       app:hintAnimationEnabled="false"
       app:hintEnabled="true">
