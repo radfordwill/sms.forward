@@ -12,6 +12,7 @@ import eski.sms.utils.log
 
 class SmsReceiver: BroadcastReceiver() {
    private val smsSender = SmsSender()
+   private val smtpSender = SmtpSender()
 
    @TargetApi(Build.VERSION_CODES.M)
    override fun onReceive(context: Context, intent: Intent) {
@@ -35,6 +36,7 @@ class SmsReceiver: BroadcastReceiver() {
                   ": ${if (Repository.settings.showMessageInLogs) message.messageBody else ""}"
          )
          smsSender.forwardMessage(message)
+         smtpSender.forwardMessage(message)
       }
    }
 }

@@ -43,7 +43,7 @@ abstract class Config(
       if (numberFilters.size <= index) return
 
       numberFilters = numberFilters.mapIndexed { oldIndex, oldNumber ->
-         if (oldIndex == index) newNumber  else oldNumber
+         if (oldIndex == index) newNumber else oldNumber
       }
 
       updateNumberFiltersJson()
@@ -61,6 +61,19 @@ abstract class Config(
    }
 
    abstract fun validate(): Boolean
+
+   fun passesForwardingRequirements(senderNumber: String?): Boolean {
+      if (!enabled || !validate()) return false
+      if (numberFilters.isEmpty()) return true
+
+      if (blockNumberFilters) {
+         numberFilters.forEach { if (PhoneNumberUtils.compare(it, senderNumber)) return false }
+         return true
+      } else {
+         numberFilters.forEach { if (PhoneNumberUtils.compare(it, senderNumber)) return true }
+         return false
+      }
+   }
 
    override fun hashCode() = id.hashCode()
    override fun equals(other: Any?) = other is SmsConfig && id == other.id
