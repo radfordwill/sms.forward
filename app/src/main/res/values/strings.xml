@@ -11,7 +11,7 @@
    <string name="addSmsConfig">Add SMS config</string>
    <string name="addSmtpConfig">Add SMTP config</string>
 
-   <string name="smsConfigName">SMS Config Name</string>
+   <string name="configName">Config Name</string>
    <string name="forwardNumber">Forwarding number</string>
    <string name="includeSenderNumber">Include sender number:</string>
    <string name="includeSubjectLine">Include subject line:</string>

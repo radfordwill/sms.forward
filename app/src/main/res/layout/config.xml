@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<eski.sms.ui.ConfigView
+   xmlns:android="http://schemas.android.com/apk/res/android"
+   xmlns:app="http://schemas.android.com/apk/res-auto"
+   xmlns:tools="http://schemas.android.com/tools"
+   android:layout_width="match_parent"
+   android:layout_height="wrap_content"
+   android:padding="@dimen/grid2Size"
+   tools:background="@color/background">
+
+   <LinearLayout
+      android:id="@+id/configContent"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@color/surfaceColor"
+      android:clipToPadding="false"
+      android:orientation="vertical"
+      android:padding="@dimen/gridSize">
+
+      <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:orientation="horizontal">
+
+         <EditText
+            android:id="@+id/configName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/gridSize"
+            android:layout_marginRight="@dimen/gridSize"
+            android:layout_marginBottom="@dimen/gridSize"
+            android:layout_weight="1"
+            android:hint="@string/configName"
+            android:maxLines="1"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:backgroundTint="#00ffffff" />
+
+         <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/configEnabledSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+      </LinearLayout>
+
+      <FrameLayout
+         android:id="@+id/configSubtypeContent"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content" />
+
+      <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginStart="@dimen/gridSize"
+         android:layout_marginLeft="@dimen/gridSize"
+         android:orientation="horizontal">
+
+         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/includeSenderNumber"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+         <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/configIncludeSenderNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:buttonTint="@color/white" />
+      </LinearLayout>
+
+      <View
+         android:layout_width="match_parent"
+         android:layout_height="@dimen/oneDpOrPx"
+         android:layout_marginLeft="@dimen/negGridSize"
+         android:layout_marginRight="@dimen/negGridSize"
+         android:layout_marginBottom="@dimen/gridSize"
+         android:background="@color/gray" />
+
+      <include layout="@layout/filters" />
+
+      <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:orientation="horizontal">
+
+         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/configAddNumberFilter"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="@string/addFilter" />
+
+         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/configDeleteButton"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="@string/delete"
+            android:textColor="@color/black"
+            app:backgroundTint="@color/red" />
+
+      </LinearLayout>
+   </LinearLayout>
+</eski.sms.ui.ConfigView>

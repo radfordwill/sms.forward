@@ -4,12 +4,10 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.ContextThemeWrapper
 import android.view.View
-import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.EditText
-import android.widget.FrameLayout
+import android.widget.LinearLayout
 import androidx.core.widget.addTextChangedListener
-import com.google.android.material.switchmaterial.SwitchMaterial
 import eski.sms.App
 import eski.sms.R
 import eski.sms.model.Repository
@@ -20,10 +18,9 @@ class SmsConfigView @JvmOverloads constructor(
    context: Context = App.instance,
    attrs: AttributeSet? = null,
    defStyle: Int = 0
-): FrameLayout(context, attrs, defStyle) {
+): LinearLayout(context, attrs, defStyle) {
 
    private lateinit var config: SmsConfig
-   private lateinit var filtersView: FiltersView
 
    companion object {
       fun fromConfig(config: SmsConfig): SmsConfigView {
@@ -37,37 +34,10 @@ class SmsConfigView @JvmOverloads constructor(
 
    private fun init(config: SmsConfig) {
       this.config = config
-      this.filtersView = FiltersView(config, this, findViewById(R.id.smsConfigAddNumberFilter))
 
-      setupNameField()
-      setupEnabledSwitch()
       setupForwardNumberField()
-      setupIncludeSenderNumberField()
       setupIncludeSubjectLineField()
       setupSubjectLineField()
-      setupDeleteButton()
-   }
-
-   private fun setupNameField() {
-      findViewById<EditText>(R.id.smsConfigName).apply {
-         setText(config.name)
-
-         addTextChangedListener {
-            config.name = it.toString()
-            Repository.updateConfig(config)
-         }
-      }
-   }
-
-   private fun setupEnabledSwitch() {
-      findViewById<SwitchMaterial>(R.id.smsConfigEnabledSwitch).apply {
-         isChecked = config.enabled
-
-         setOnCheckedChangeListener { buttonView, isChecked ->
-            config.enabled = isChecked
-            Repository.updateConfig(config)
-         }
-      }
    }
 
    private fun setupForwardNumberField() {
@@ -76,17 +46,6 @@ class SmsConfigView @JvmOverloads constructor(
 
          addTextChangedListener {
             config.forwardNumber = it.toString()
-            Repository.updateConfig(config)
-         }
-      }
-   }
-
-   private fun setupIncludeSenderNumberField() {
-      findViewById<CheckBox>(R.id.smsConfigIncludeSenderNumber).apply {
-         isChecked = config.includeSenderNumber
-
-         setOnCheckedChangeListener { buttonView, isChecked ->
-            config.includeSenderNumber = isChecked
             Repository.updateConfig(config)
          }
       }
@@ -110,16 +69,6 @@ class SmsConfigView @JvmOverloads constructor(
          addTextChangedListener {
             config.subjectLine = it.toString()
             Repository.updateConfig(config)
-         }
-      }
-   }
-
-
-   private fun setupDeleteButton() {
-      findViewById<View>(R.id.smsConfigDeleteButton).apply {
-         setOnClickListener {
-            (this@SmsConfigView.parent as? ViewGroup)?.removeView(this@SmsConfigView)
-            Repository.deleteConfig(config)
          }
       }
    }
