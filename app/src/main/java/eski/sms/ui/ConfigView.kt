@@ -94,7 +94,7 @@ class ConfigView @JvmOverloads constructor(
       findViewById<FrameLayout>(R.id.configSubtypeContent).apply {
          when (config) {
             is SmsConfig -> addView(SmsConfigView.fromConfig(config))
-            is SmtpConfig -> println()
+            is SmtpConfig -> addView(SmtpConfigView.fromConfig(config))
          }
       }
    }

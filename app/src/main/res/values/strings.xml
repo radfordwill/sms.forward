@@ -24,10 +24,21 @@
    <string name="filtersForwardingAll">Filters: none (forwarding all)</string>
    <string name="filterNumber">Filter number</string>
 
-   <string name="smtpConfigName">SMTP Config Name</string>
-
    <string name="phoneNumberHint">555–555–5555</string>
    <string name="phoneNumberError">That isn\'t a valid phone number.</string>
+
+   <string name="host">Host</string>
+   <string name="hostHint">smtp.example.com</string>
+   <string name="port">Port</string>
+   <string name="portHint">587</string>
+   <string name="username">Username</string>
+   <string name="usernameHint">my.name@example.com</string>
+   <string name="password">Password</string>
+   <string name="passwordHint">••••••••••</string>
+   <string name="fromAddress">From address</string>
+   <string name="fromAddressHint">from.user@example.com</string>
+   <string name="forwardAddress">Forward address</string>
+   <string name="forwardAddressHint">to.user@example.com</string>
 
    <string name="sentFrom">Sent from: %s</string>
 

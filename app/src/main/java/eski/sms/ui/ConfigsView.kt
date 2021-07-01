@@ -14,6 +14,7 @@ class ConfigsView(root: View) {
 
    init {
       Repository.smsConfigs.forEach { addConfigView(it) }
+      Repository.smtpConfigs.forEach { addConfigView(it) }
 
       root.findViewById<View>(R.id.addSmsConfigButton).setOnClickListener {
          val newConfig = SmsConfig().apply { Repository.updateConfig(this) }

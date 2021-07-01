@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<eski.sms.ui.SmtpConfigView
+   xmlns:android="http://schemas.android.com/apk/res/android"
+   xmlns:app="http://schemas.android.com/apk/res-auto"
+   xmlns:tools="http://schemas.android.com/tools"
+   android:layout_width="match_parent"
+   android:layout_height="wrap_content"
+   android:orientation="vertical"
+   tools:background="@color/background">
+
+   <com.google.android.material.textfield.TextInputLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="@dimen/gridHalfSize"
+      android:layout_marginLeft="@dimen/gridHalfSize"
+      android:hint="@string/host"
+      android:textColorHint="@color/gray"
+      app:expandedHintEnabled="false"
+      app:hintAnimationEnabled="false"
+      app:hintEnabled="true">
+
+      <com.google.android.material.textfield.TextInputEditText
+         android:id="@+id/smtpConfigHost"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:hint="@string/hostHint"
+         app:backgroundTint="#00ffffff" />
+
+   </com.google.android.material.textfield.TextInputLayout>
+
+   <com.google.android.material.textfield.TextInputLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="@dimen/gridHalfSize"
+      android:layout_marginLeft="@dimen/gridHalfSize"
+      android:hint="@string/port"
+      android:textColorHint="@color/gray"
+      app:expandedHintEnabled="false"
+      app:hintAnimationEnabled="false"
+      app:hintEnabled="true">
+
+      <com.google.android.material.textfield.TextInputEditText
+         android:id="@+id/smtpConfigPort"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:hint="@string/portHint"
+         android:inputType="number"
+         app:backgroundTint="#00ffffff" />
+
+   </com.google.android.material.textfield.TextInputLayout>
+
+
+   <com.google.android.material.textfield.TextInputLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="@dimen/gridHalfSize"
+      android:layout_marginLeft="@dimen/gridHalfSize"
+      android:hint="@string/username"
+      android:textColorHint="@color/gray"
+      app:expandedHintEnabled="false"
+      app:hintAnimationEnabled="false"
+      app:hintEnabled="true">
+
+      <com.google.android.material.textfield.TextInputEditText
+         android:id="@+id/smtpConfigUsername"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:hint="@string/usernameHint"
+         app:backgroundTint="#00ffffff" />
+
+   </com.google.android.material.textfield.TextInputLayout>
+
+   <com.google.android.material.textfield.TextInputLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="@dimen/gridHalfSize"
+      android:layout_marginLeft="@dimen/gridHalfSize"
+      android:hint="@string/password"
+      android:textColorHint="@color/gray"
+      app:expandedHintEnabled="false"
+      app:hintAnimationEnabled="false"
+      app:hintEnabled="true">
+
+      <com.google.android.material.textfield.TextInputEditText
+         android:id="@+id/smtpConfigPassword"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:hint="@string/passwordHint"
+         android:inputType="textPassword"
+         app:backgroundTint="#00ffffff" />
+
+   </com.google.android.material.textfield.TextInputLayout>
+
+   <com.google.android.material.textfield.TextInputLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="@dimen/gridHalfSize"
+      android:layout_marginLeft="@dimen/gridHalfSize"
+      android:hint="@string/fromAddress"
+      android:textColorHint="@color/gray"
+      app:expandedHintEnabled="false"
+      app:hintAnimationEnabled="false"
+      app:hintEnabled="true">
+
+      <com.google.android.material.textfield.TextInputEditText
+         android:id="@+id/smtpConfigFromAddress"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:hint="@string/fromAddressHint"
+         app:backgroundTint="#00ffffff" />
+
+   </com.google.android.material.textfield.TextInputLayout>
+
+   <com.google.android.material.textfield.TextInputLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="@dimen/gridHalfSize"
+      android:layout_marginLeft="@dimen/gridHalfSize"
+      android:hint="@string/forwardAddress"
+      android:textColorHint="@color/gray"
+      app:expandedHintEnabled="false"
+      app:hintAnimationEnabled="false"
+      app:hintEnabled="true">
+
+      <com.google.android.material.textfield.TextInputEditText
+         android:id="@+id/smtpConfigForwardAddress"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:hint="@string/forwardAddressHint"
+         app:backgroundTint="#00ffffff" />
+
+   </com.google.android.material.textfield.TextInputLayout>
+
+   <com.google.android.material.textfield.TextInputLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="@dimen/gridHalfSize"
+      android:layout_marginLeft="@dimen/gridHalfSize"
+      android:hint="@string/subjectLine"
+      android:textColorHint="@color/gray"
+      app:expandedHintEnabled="false"
+      app:hintAnimationEnabled="false"
+      app:hintEnabled="true">
+
+      <com.google.android.material.textfield.TextInputEditText
+         android:id="@+id/smtpConfigSubjectLine"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:hint="@string/subjectLineHint"
+         app:backgroundTint="#00ffffff" />
+
+   </com.google.android.material.textfield.TextInputLayout>
+</eski.sms.ui.SmtpConfigView>
