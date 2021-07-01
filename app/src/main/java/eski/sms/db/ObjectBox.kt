@@ -22,6 +22,8 @@ object ObjectBox {
          .build()
 
       smsConfigBox = store.boxFor()
+      smtpConfigBox = store.boxFor()
+
       logsBox = store.boxFor()
       settingsBox = store.boxFor()
       if (settingsBox.all.isEmpty()) settingsBox.put(Settings())

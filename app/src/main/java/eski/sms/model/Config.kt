@@ -1,8 +1,10 @@
 package eski.sms.model
 
+import android.telephony.PhoneNumberUtils
 import eski.sms.utils.LazyMutable
 import io.objectbox.annotation.BaseEntity
 import io.objectbox.annotation.Id
+import io.objectbox.annotation.Transient
 import org.json.JSONArray
 import org.json.JSONException
 
@@ -13,6 +15,7 @@ abstract class Config(
    var name: String = "",
    var numberFiltersJson: String = "[]",
    var blockNumberFilters: Boolean = false,
+   var includeSenderNumber: Boolean = false,
    var enabled: Boolean = true
 ) {
    @delegate:Transient

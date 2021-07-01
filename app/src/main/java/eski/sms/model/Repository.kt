@@ -10,6 +10,9 @@ object Repository {
    var smsConfigs: HashSet<SmsConfig> = ObjectBox.smsConfigBox.all.toHashSet()
       private set
 
+   var smtpConfigs: HashSet<SmtpConfig> = ObjectBox.smtpConfigBox.all.toHashSet()
+      private set
+
    var logs: List<SmsLog> = ObjectBox.logsBox.all
       private set
 
@@ -19,6 +22,7 @@ object Repository {
 
    fun updateConfig(config: Config) {
       if (config is SmsConfig) updateSmsConfig(config)
+      else if (config is SmtpConfig) updateSmtpConfig(config)
    }
 
    private fun updateSmsConfig(config: SmsConfig) {
@@ -26,13 +30,24 @@ object Repository {
       smsConfigs = smsConfigs.updateSafely(config)
    }
 
+   private fun updateSmtpConfig(config: SmtpConfig) {
+      ObjectBox.smtpConfigBox.put(config)
+      smtpConfigs = smtpConfigs.updateSafely(config)
+   }
+
    fun deleteConfig(config: Config) {
       if (config is SmsConfig) deleteSmsConfig(config)
+      else if (config is SmtpConfig) deleteSmtpConfig(config)
    }
 
    private fun deleteSmsConfig(config: SmsConfig) {
       if (config.id != 0L) ObjectBox.smsConfigBox.remove(config)
       smsConfigs = smsConfigs.removeSafely(config)
+   }
+
+   private fun deleteSmtpConfig(config: SmtpConfig) {
+      if (config.id != 0L) ObjectBox.smtpConfigBox.remove(config)
+      smtpConfigs = smtpConfigs.removeSafely(config)
    }
 
    fun addLog(log: SmsLog) {

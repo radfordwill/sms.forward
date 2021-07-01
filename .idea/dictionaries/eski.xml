@@ -2,6 +2,8 @@
   <dictionary name="eski">
     <words>
       <w>pdus</w>
+      <w>smtp</w>
+      <w>starttls</w>
     </words>
   </dictionary>
 </component>

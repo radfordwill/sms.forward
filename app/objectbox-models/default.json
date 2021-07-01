@@ -122,9 +122,86 @@
         }
       ],
       "relations": []
+    },
+    {
+      "id": "8:3249510199577307185",
+      "lastPropertyId": "13:2353425540668764092",
+      "name": "SmtpConfig",
+      "properties": [
+        {
+          "id": "1:924932894018465029",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:5786839099055353727",
+          "name": "name",
+          "type": 9
+        },
+        {
+          "id": "3:6321353069543071826",
+          "name": "numberFiltersJson",
+          "type": 9
+        },
+        {
+          "id": "4:3877606126939165738",
+          "name": "blockNumberFilters",
+          "type": 1,
+          "flags": 4
+        },
+        {
+          "id": "5:1181622909364549572",
+          "name": "enabled",
+          "type": 1,
+          "flags": 4
+        },
+        {
+          "id": "6:5144067537506730346",
+          "name": "host",
+          "type": 9
+        },
+        {
+          "id": "7:3995278608119580464",
+          "name": "port",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "8:5869953156774930261",
+          "name": "username",
+          "type": 9
+        },
+        {
+          "id": "9:974350745710543318",
+          "name": "password",
+          "type": 9
+        },
+        {
+          "id": "10:6743766053888198684",
+          "name": "protocolName",
+          "type": 9
+        },
+        {
+          "id": "11:8918612932291531424",
+          "name": "fromAddress",
+          "type": 9
+        },
+        {
+          "id": "12:4331400626802804059",
+          "name": "subject",
+          "type": 9
+        },
+        {
+          "id": "13:2353425540668764092",
+          "name": "forwardAddress",
+          "type": 9
+        }
+      ],
+      "relations": []
     }
   ],
-  "lastEntityId": "7:3774795052221533934",
+  "lastEntityId": "8:3249510199577307185",
   "lastIndexId": "0:0",
   "lastRelationId": "0:0",
   "lastSequenceId": "0:0",

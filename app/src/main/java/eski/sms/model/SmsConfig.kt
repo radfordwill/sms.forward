@@ -10,11 +10,19 @@ class SmsConfig(
    id: Long = 0,
    numberFiltersJson: String = "[]",
    blockNumberFilters: Boolean = false,
+   includeSenderNumber: Boolean = true,
+   enabled: Boolean = true,
    var forwardNumber: String = "",
-   var includeSenderNumber: Boolean = false,
    var includeSubjectLine: Boolean = false,
    var subjectLine: String = ""
-): Config(id, name, numberFiltersJson, blockNumberFilters) {
+): Config(
+   id = id,
+   name = name,
+   numberFiltersJson = numberFiltersJson,
+   blockNumberFilters = blockNumberFilters,
+   includeSenderNumber = includeSenderNumber,
+   enabled = enabled
+) {
 
    override fun validate() = PhoneNumberUtils.isGlobalPhoneNumber(forwardNumber)
 }
