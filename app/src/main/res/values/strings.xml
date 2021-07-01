@@ -31,6 +31,7 @@
    <string name="hostHint">smtp.example.com</string>
    <string name="port">Port</string>
    <string name="portHint">587</string>
+   <string name="protocol">Protocol:</string>
    <string name="username">Username</string>
    <string name="usernameHint">my.name@example.com</string>
    <string name="password">Password</string>

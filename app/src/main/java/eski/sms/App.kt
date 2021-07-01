@@ -2,6 +2,7 @@ package eski.sms
 
 import android.annotation.SuppressLint
 import android.app.Application
+import android.content.res.Resources
 import android.view.ContextThemeWrapper
 import eski.sms.db.ObjectBox
 
@@ -13,6 +14,9 @@ class App: Application() {
 
       @SuppressLint("StaticFieldLeak")
       lateinit var themedInstance: ContextThemeWrapper
+
+      @SuppressLint("StaticFieldLeak")
+      lateinit var resources: Resources
    }
 
    init {
@@ -23,5 +27,6 @@ class App: Application() {
    override fun onCreate() {
       super.onCreate()
       ObjectBox.init()
+      App.resources = resources
    }
 }

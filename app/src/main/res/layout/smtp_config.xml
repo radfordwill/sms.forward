@@ -50,6 +50,20 @@
 
    </com.google.android.material.textfield.TextInputLayout>
 
+   <com.chivorn.smartmaterialspinner.SmartMaterialSpinner
+      android:id="@+id/smtpConfigProtocol"
+      android:layout_width="160dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="@dimen/gridHalfSize"
+      android:layout_marginLeft="@dimen/gridHalfSize"
+      app:smsp_arrowColor="@color/lightGray"
+      app:smsp_highlightColor="@color/colorAccent"
+      app:smsp_hint="@string/protocol"
+      app:smsp_itemColor="@color/white"
+      app:smsp_itemListColor="@color/white"
+      app:smsp_selectedItemListColor="@color/white"
+      app:smsp_underlineColor="@color/transparent"
+      app:smsp_underlineSize="1dp" />
 
    <com.google.android.material.textfield.TextInputLayout
       android:layout_width="match_parent"

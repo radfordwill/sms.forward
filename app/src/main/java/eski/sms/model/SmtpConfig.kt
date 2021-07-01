@@ -17,7 +17,7 @@ class SmtpConfig(
    var port: Int = 0,
    var username: String = "",
    var password: String = "",
-   @Convert(converter = Protocol.Converter::class, dbType = Int::class) var protocol: Protocol = Protocol.STARTTLS,
+   @Convert(converter = Protocol.Converter::class, dbType = Int::class) var protocol: Protocol = Protocol.TLS,
    var fromAddress: String = "",
    var subject: String = "",
    var forwardAddress: String = ""
@@ -42,7 +42,7 @@ class SmtpConfig(
 
          override fun convertToEntityProperty(databaseValue: Int?): Protocol {
             values().forEach { if (it.stableId == databaseValue) return it }
-            return STARTTLS
+            return TLS
          }
       }
    }

@@ -4,9 +4,13 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.ContextThemeWrapper
 import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.LinearLayout
+import androidx.appcompat.widget.AppCompatSpinner
 import androidx.core.widget.addTextChangedListener
+import com.chivorn.smartmaterialspinner.SmartMaterialSpinner
 import eski.sms.App
 import eski.sms.R
 import eski.sms.model.Repository
@@ -36,6 +40,7 @@ class SmtpConfigView @JvmOverloads constructor(
 
       setupHostField()
       setupPortField()
+      setupProtocolField()
       setupUsernameField()
       setupPasswordField()
       setupFromAddressField()
@@ -62,6 +67,36 @@ class SmtpConfigView @JvmOverloads constructor(
             config.port = it.toString().toInt()
             Repository.updateConfig(config)
          }
+      }
+   }
+
+   private fun setupProtocolField() {
+      findViewById<SmartMaterialSpinner<String>>(R.id.smtpConfigProtocol).apply {
+         item = SmtpConfig.Protocol.values().map { it.name }
+         setSelection(config.protocol.ordinal)
+
+         onItemSelectedListener = object: AdapterView.OnItemSelectedListener {
+            override fun onNothingSelected(parent: AdapterView<*>?) {}
+
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+               config.protocol = SmtpConfig.Protocol.values()[position]
+               Repository.updateConfig(config)
+            }
+         }
+
+         setOnSpinnerEventListener(object: SmartMaterialSpinner.OnSpinnerEventListener {
+            override fun onSpinnerOpened(spinner: SmartMaterialSpinner<*>?) {
+               underlineColor = CommonColors.accentColor
+               floatingLabelColor = CommonColors.accentColor
+               arrowColor = CommonColors.accentColor
+            }
+
+            override fun onSpinnerClosed(spinner: SmartMaterialSpinner<*>?) {
+               underlineColor = CommonColors.transparent
+               floatingLabelColor = CommonColors.gray
+               arrowColor = CommonColors.lightGray
+            }
+         })
       }
    }
 

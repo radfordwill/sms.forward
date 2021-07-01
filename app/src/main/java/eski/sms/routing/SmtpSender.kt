@@ -26,9 +26,15 @@ class SmtpSender {
 
             val properties = Properties().apply {
                put("mail.smtp.auth", "true")
-               put("mail.smtp.starttls.enable", "true")
                put("mail.smtp.host", config.host)
                put("mail.smtp.port", config.port.toString())
+
+               when (config.protocol) {
+                  SmtpConfig.Protocol.SSL -> put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory")
+                  SmtpConfig.Protocol.TLS -> {
+                  }
+                  SmtpConfig.Protocol.STARTTLS -> put("mail.smtp.starttls.enable", "true")
+               }
             }
 
             val session = Session.getInstance(properties, authenticator(config.username, config.password))
