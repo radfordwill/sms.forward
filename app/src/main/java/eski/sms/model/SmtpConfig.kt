@@ -17,7 +17,7 @@ class SmtpConfig(
    var port: Int = 0,
    var username: String = "",
    var password: String = "",
-   @Convert(converter = Protocol.Converter::class, dbType = Protocol::class) var protocol: Protocol = Protocol.STARTTLS,
+   @Convert(converter = Protocol.Converter::class, dbType = Int::class) var protocol: Protocol = Protocol.STARTTLS,
    var fromAddress: String = "",
    var subject: String = "",
    var forwardAddress: String = ""
