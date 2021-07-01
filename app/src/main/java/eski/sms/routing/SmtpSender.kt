@@ -46,6 +46,10 @@ class SmtpSender {
                subject = config.subject
                setText(formatMessage(message, config))
             }
+            log(
+               "attempting to forward a message from ${message.originatingAddress} to ${config.forwardAddress}" +
+                     if (Repository.settings.showMessageInLogs) ": ${formatMessage(message, config)}" else ""
+            )
 
             executor.execute {
                try {
