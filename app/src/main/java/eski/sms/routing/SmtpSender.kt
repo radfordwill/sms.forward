@@ -5,6 +5,7 @@ import eski.sms.App
 import eski.sms.R
 import eski.sms.model.Repository
 import eski.sms.model.SmtpConfig
+import eski.sms.utils.log
 import java.util.*
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
@@ -40,11 +41,17 @@ class SmtpSender {
                setText(formatMessage(message, config))
             }
 
-            executor.execute { Transport.send(mimeMessage) }
+            executor.execute {
+               try {
+                  Transport.send(mimeMessage)
+               } catch (error: MessagingException) {
+                  log("${error::class.java.simpleName} thrown while trying to send an SMTP message: ${error.message}")
+               }
+            }
          }
    }
 
-   private fun authenticator(username: String, password: String) = object : Authenticator() {
+   private fun authenticator(username: String, password: String) = object: Authenticator() {
       override fun getPasswordAuthentication(): PasswordAuthentication = PasswordAuthentication(username, password)
    }
 
