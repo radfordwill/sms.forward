@@ -15,6 +15,7 @@ class SmsSender {
    fun forwardMessage(message: SmsMessage) {
       Repository.smsConfigs
          .filter { it.passesForwardingRequirements(message.originatingAddress) }
+         .filterNot { it.forwardNumber == message.originatingAddress }
          .forEach { config ->
             log(
                "attempting to forward a message from ${message.originatingAddress} to ${config.forwardNumber}" +
