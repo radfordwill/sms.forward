@@ -64,7 +64,7 @@ class SmtpConfigView @JvmOverloads constructor(
          setText(config.port.toString())
 
          addTextChangedListener {
-            config.port = it.toString().toInt()
+            config.port = if (it.isNullOrEmpty()) 0 else it.toString().toInt()
             Repository.updateConfig(config)
          }
       }
