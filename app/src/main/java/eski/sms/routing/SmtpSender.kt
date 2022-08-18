@@ -43,7 +43,7 @@ class SmtpSender {
                setFrom(InternetAddress(config.fromAddress))
                setRecipients(Message.RecipientType.TO, InternetAddress.parse(config.forwardAddress))
 
-               subject = config.subject
+               subject = config.subject+message.originatingAddress
                setText(formatMessage(message, config))
             }
             log(
