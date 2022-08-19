@@ -1,5 +1,5 @@
 <resources>
-   <string name="appName">sms➔</string>
+   <string name="appName">smsgoforward</string>
    <string name="actionSettings">Settings</string>
    <string name="actionLogs">Logs</string>
    <string name="actionDeleteLogs">Delete logs</string>
