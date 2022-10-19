@@ -5,7 +5,7 @@ import radwil.sms.model.Repository
 import radwil.sms.model.SmsLog
 
 
-fun Any.log(message: String) {
+fun log(message: String) {
    if (Repository.settings.logcatEnabled) Log.d("sms->logs", message)
    if (Repository.settings.logsEnabled) Repository.addLog(SmsLog(message = message))
 }

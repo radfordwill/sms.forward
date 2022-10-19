@@ -13,8 +13,8 @@
 
       <TextView
          android:id="@+id/filtersHeader"
-         android:layout_width="0dp"
-         android:layout_height="wrap_content"
+         android:layout_width="350dp"
+         android:layout_height="11dp"
          android:layout_weight="1"
          android:text="@string/filters"
          android:textColor="@color/lightGray"
@@ -24,7 +24,7 @@
          android:id="@+id/filtersBlockedSwitch"
          style="@style/FilterSwitch"
          android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
+         android:layout_height="11dp"
          android:theme="@style/FilterSwitch" />
 
    </LinearLayout>

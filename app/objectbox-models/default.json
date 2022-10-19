@@ -125,7 +125,7 @@
     },
     {
       "id": "8:3249510199577307185",
-      "lastPropertyId": "15:2803899415679107091",
+      "lastPropertyId": "16:5425365062807866461",
       "name": "SmtpConfig",
       "properties": [
         {
@@ -203,6 +203,11 @@
           "name": "protocol",
           "type": 5,
           "flags": 2
+        },
+        {
+          "id": "16:5425365062807866461",
+          "name": "contactName",
+          "type": 9
         }
       ],
       "relations": []

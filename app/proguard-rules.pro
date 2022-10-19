@@ -6,7 +6,7 @@
     *** Companion;
 }
 -keepclasseswithmembers class kotlinx.serialization.json.** {
-    kotlinx.serialization.KSerializer serializer(...);
+    #kotlinx.serialization.KSerializer serializer(...);
 }
 
 # Change here com.yourcompany.yourpackage

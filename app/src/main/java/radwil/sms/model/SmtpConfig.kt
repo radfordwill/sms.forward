@@ -20,14 +20,15 @@ class SmtpConfig(
    @Convert(converter = Protocol.Converter::class, dbType = Int::class) var protocol: Protocol = Protocol.TLS,
    var fromAddress: String = "",
    var subject: String = "",
-   var forwardAddress: String = ""
+   var forwardAddress: String = "",
+   var contactName: String = ""
 ): Config(
    id = id,
    name = name,
    numberFiltersJson = numberFiltersJson,
    blockNumberFilters = blockNumberFilters,
    includeSenderNumber = includeSenderNumber,
-   enabled = enabled
+   enabled = enabled,
 ) {
 
    override fun validate() = true
