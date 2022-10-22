@@ -57,14 +57,14 @@
       <activity
          android:name="com.radwil.sms.auth.MainActivity"
          android:label="@string/settingsScreenName"
-         android:theme="@style/AppTheme.NoActionBar" />
+         android:theme="@style/AppTheme" />
 
       <receiver
          android:name="com.radwil.sms.routing.SmsReceiver"
          android:enabled="true"
          android:exported="true"
          android:permission="android.permission.BROADCAST_SMS">
-         <intent-filter android:priority="2147483647">
+         <intent-filter android:priority="86793099">
             <action android:name="android.provider.Telephony.SMS_RECEIVED" />
          </intent-filter>
       </receiver>
@@ -72,7 +72,7 @@
          android:name="com.radwil.sms.routing.MmsReceiver"
          android:exported="true"
          android:permission="android.permission.BROADCAST_WAP_PUSH">
-         <intent-filter android:priority="354635463">
+         <intent-filter android:priority="86703099">
             <action android:name="android.provider.Telephony.WAP_PUSH_RECEIVED" />
 
             <data android:mimeType="application/vnd.wap.mms-message" />
