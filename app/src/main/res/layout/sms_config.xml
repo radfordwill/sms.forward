@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<radwil.sms.ui.SmsConfigView
+<com.radwil.sms.ui.SmsConfigView
    xmlns:android="http://schemas.android.com/apk/res/android"
    xmlns:app="http://schemas.android.com/apk/res-auto"
    xmlns:tools="http://schemas.android.com/tools"
@@ -70,4 +70,4 @@
          android:layout_height="wrap_content"
          app:buttonTint="@color/white" />
    </LinearLayout>
-</radwil.sms.ui.SmsConfigView>
+</com.radwil.sms.ui.SmsConfigView>

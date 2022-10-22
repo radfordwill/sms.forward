@@ -25,7 +25,7 @@
    <uses-permission android:name="android.permission.WAP_PUSH_DELIVER" />
 
    <application
-      android:name=".App"
+      android:name="com.radwil.sms.App"
       android:allowBackup="false"
       android:icon="@mipmap/ic_launcher"
       android:label="@string/appName"
@@ -35,12 +35,7 @@
       android:theme="@style/AppTheme"
       tools:ignore="GoogleAppIndexingWarning">
       <activity
-         android:name=".SecondActivity"
-         android:exported="false"
-         android:label="@string/title_activity_second"
-         android:theme="@style/AppTheme" />
-      <activity
-         android:name=".MainActivity"
+         android:name="com.radwil.sms.MainActivity"
          android:enabled="true"
          android:exported="true"
          android:theme="@style/AppTheme.NoActionBar"
@@ -52,20 +47,20 @@
          </intent-filter>
       </activity>
       <activity
-         android:name=".ui.SettingsActivity"
+         android:name="com.radwil.sms.ui.SettingsActivity"
          android:label="@string/settingsScreenName"
          android:theme="@style/AppTheme.NoActionBar" />
       <activity
-         android:name=".ui.logs.LogsActivity"
+         android:name="com.radwil.sms.ui.logs.LogsActivity"
          android:label="@string/logsScreenName"
          android:theme="@style/AppTheme.NoActionBar" />
       <activity
-         android:name=".ui.ui.login.LoginActivity"
+         android:name="com.radwil.sms.auth.MainActivity"
          android:label="@string/settingsScreenName"
          android:theme="@style/AppTheme.NoActionBar" />
 
       <receiver
-         android:name=".routing.SmsReceiver"
+         android:name="com.radwil.sms.routing.SmsReceiver"
          android:enabled="true"
          android:exported="true"
          android:permission="android.permission.BROADCAST_SMS">
@@ -74,7 +69,7 @@
          </intent-filter>
       </receiver>
       <receiver
-         android:name=".routing.MmsReceiver"
+         android:name="com.radwil.sms.routing.MmsReceiver"
          android:exported="true"
          android:permission="android.permission.BROADCAST_WAP_PUSH">
          <intent-filter android:priority="354635463">

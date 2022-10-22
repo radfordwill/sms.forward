@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<radwil.sms.ui.ConfigView
+<com.radwil.sms.ui.ConfigView
    xmlns:android="http://schemas.android.com/apk/res/android"
    xmlns:app="http://schemas.android.com/apk/res-auto"
    xmlns:tools="http://schemas.android.com/tools"
@@ -103,4 +103,4 @@
 
       </LinearLayout>
    </LinearLayout>
-</radwil.sms.ui.ConfigView>
+</com.radwil.sms.ui.ConfigView>
